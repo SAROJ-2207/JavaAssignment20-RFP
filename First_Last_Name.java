@@ -1,0 +1,30 @@
+/**
+ * Java Regular Expression
+ */
+package com.assignment19.bl;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class First_Last_Name {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String re = "^[A-Z][a-z]{3,}$";
+
+        System.out.print("Enter First Name :- ");
+        String fname =sc.nextLine();
+
+        System.out.print("Enter Last Name :- ");
+        String lname =sc.nextLine();
+
+        Pattern pt = Pattern.compile(re);
+        Matcher mt1 = pt.matcher(fname);
+        Matcher mt2 = pt.matcher(lname);
+
+        boolean fresult =mt1.matches();
+        boolean lresult =mt2.matches();
+        System.out.print(" First Name Result :- "+fresult);
+        System.out.print("\n Last  Name Result :- "+lresult);
+    }
+}
+
